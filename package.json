@@ -1,6 +1,6 @@
 {
   "name": "cistringbuilder",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Node.js string builder based on c#",
   "main": "index.js",
   "scripts": {
