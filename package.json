@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Node.js string builder based on c#",
   "main": "index.js",
+  "readme": "README.md",
   "scripts": {
     "test": "gulp test"
   },
