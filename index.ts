@@ -4,7 +4,10 @@
 * @class ci.StringBuilder
 *
 */
-var CIStringBuilder = (function () {
+class CIStringBuilder {
+
+    newLineCharacter: string = "\r\n";
+    strings: string[];
     /**
      * Creates a new string builder object
      * @class ci.StringBuilder
@@ -14,36 +17,38 @@ var CIStringBuilder = (function () {
      * @example var sb = new ci.StringBuilder("test");
      * @since 1.0.0
      */
-    function CIStringBuilder(value) {
-        this.newLineCharacter = "\r\n";
+    constructor(value?: string) {
         this.strings = new Array();
         if (value !== undefined) {
             this.strings.push(value);
         }
     }
-    /**
+    
+    /** 
     * Appends a string to the string builder
     * @method append
     * @param {string} value the string to add to the string builder
     * @since 1.0.0
     */
-    CIStringBuilder.prototype.append = function (value) {
+    append(value: string) {
         if (value) {
             this.strings.push(value);
         }
-    };
-    /**
+    }
+
+    /** 
      * Appends a string to the string builder followed by a new line
      * @method appendLine
      * @param {string} value the string to add to the string builder
      * @since 1.0.0
      */
-    CIStringBuilder.prototype.appendLine = function (value) {
+    appendLine(value: string) {
         if (value) {
             this.strings.push(value);
             this.strings.push(this.newLineCharacter);
         }
-    };
+    }
+    
     /**
      * Appends a  formated String
      * @method appendFormat
@@ -51,30 +56,33 @@ var CIStringBuilder = (function () {
      * @param {array} values to enter in to the string e.g. "title","artist"
      * @since 1.0.0
      */
-    CIStringBuilder.prototype.appendFormat = function (value, args) {
+    appendFormat(value: string, args: any) {
         var i = args.length;
+
         while (i--) {
             value = value.replace(new RegExp('\\{' + i + '}', 'gm'), args[i]);
         }
         this.strings.push(value);
-    };
+    }
+
     /**
      * Clears the string builder
      * @method clear
      * @since 1.0.0
      */
-    CIStringBuilder.prototype.clear = function () {
+    clear() {
         this.strings.length = 1;
-    };
+    }
+
     /**
      * The string builder to string
      * @method toString
      * @return {string} the content of the string builder as a string
      * @since 1.0.0
      */
-    CIStringBuilder.prototype.toString = function () {
+    toString() : string {
         return this.strings.join("");
-    };
-    return CIStringBuilder;
-})();
-module.exports = CIStringBuilder;
+    }
+}
+
+export = CIStringBuilder;
