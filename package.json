@@ -1,0 +1,30 @@
+{
+  "name": "cistringbuilder",
+  "version": "1.0.0",
+  "description": "Node.js string builder based on c#",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeiain/CIStringBuilder.git"
+  },
+  "keywords": [
+    "node",
+    "node.js",
+    "stringbuilder"
+  ],
+  "author": "CodeIain <CodeIain@outlook.com> (codeiain.azurewebsites.net)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeiain/CIStringBuilder/issues"
+  },
+  "homepage": "https://github.com/codeiain/CIStringBuilder#readme",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.0",
+    "mocha": "^2.2.5"
+  }
+}
